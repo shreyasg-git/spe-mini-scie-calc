@@ -12,7 +12,9 @@ int main() {
   keypad(stdscr, TRUE);  // Enable arrow keys
   curs_set(0);           // Hide cursor initially
 
-  std::vector<std::string> choices = {"Square Root", "Exit"};
+  std::vector<std::string> choices = {
+      "Square Root", "Factorial (unimplemented)",
+      "Natural Logarithm (unimplemented)", "Power (unimplemented)", "Exit"};
   int num_choices = choices.size();
   int highlight = 0;
   int choice = -1;
@@ -53,7 +55,7 @@ int main() {
     }
 
     if (choice != -1) {
-      if (choice == 1) { // Exit
+      if (choice == 4) { // Exit
         break;
       } else if (choice == 0) { // Square Root
         clear();
@@ -76,6 +78,13 @@ int main() {
         } else {
           printw("Result:  %g\n", std::sqrt(number));
         }
+        printw("Press any key to continue...");
+        refresh();
+        getch();
+        choice = -1; // Reset choice to go back to menu
+      } else if (choice >= 1 && choice <= 3) { // Unimplemented functions
+        clear();
+        printw("Error: The '%s' function is currently unimplemented.\n", choices[choice].c_str());
         printw("Press any key to continue...");
         refresh();
         getch();
