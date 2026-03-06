@@ -9,4 +9,6 @@ COPY . .
 
 RUN mkdir -p build && cd build && cmake .. && make
 
+ENV TERM=xterm-256color
+
 CMD ["./build/calculator"]

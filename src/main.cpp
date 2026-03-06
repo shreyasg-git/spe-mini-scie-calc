@@ -84,7 +84,8 @@ int main() {
         choice = -1; // Reset choice to go back to menu
       } else if (choice >= 1 && choice <= 3) { // Unimplemented functions
         clear();
-        printw("Error: The '%s' function is currently unimplemented.\n", choices[choice].c_str());
+        printw("Error: The '%s' function is currently unimplemented.\n",
+               choices[choice].c_str());
         printw("Press any key to continue...");
         refresh();
         getch();
