@@ -92,6 +92,8 @@ calculator_EXTERNAL_OBJECTS =
 
 calculator: CMakeFiles/calculator.dir/src/main.cpp.o
 calculator: CMakeFiles/calculator.dir/build.make
+calculator: /usr/lib/x86_64-linux-gnu/libcurses.so
+calculator: /usr/lib/x86_64-linux-gnu/libform.so
 calculator: CMakeFiles/calculator.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shreyasbg/Desktop/spe-mini-scie-calc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable calculator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/calculator.dir/link.txt --verbose=$(VERBOSE)
