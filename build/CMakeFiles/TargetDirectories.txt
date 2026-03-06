@@ -1,3 +1,0 @@
-/home/shreyasbg/Desktop/spe-mini-scie-calc/build/CMakeFiles/calculator.dir
-/home/shreyasbg/Desktop/spe-mini-scie-calc/build/CMakeFiles/edit_cache.dir
-/home/shreyasbg/Desktop/spe-mini-scie-calc/build/CMakeFiles/rebuild_cache.dir
