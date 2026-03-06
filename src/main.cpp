@@ -1,5 +1,7 @@
+#include "calculator.h"
 #include <cmath>
 #include <locale.h>
+#include <stdexcept>
 #include <ncurses.h>
 #include <string>
 #include <vector>
@@ -72,11 +74,12 @@ int main() {
 
         if (scan_res != 1) {
           printw("Invalid input.\n");
-        } else if (number < 0) {
-          printw("Error: Cannot calculate the square root of a negative "
-                 "number.\n");
         } else {
-          printw("Result:  %g\n", std::sqrt(number));
+          try {
+            printw("Result:  %g\n", calculator::square_root(number));
+          } catch (const std::invalid_argument& e) {
+            printw("%s\n", e.what());
+          }
         }
         printw("Press any key to continue...");
         refresh();
