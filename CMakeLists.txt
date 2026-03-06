@@ -30,3 +30,12 @@ target_include_directories(calc_test PRIVATE src)
 
 include(GoogleTest)
 gtest_discover_tests(calc_test)
+
+# Integration Testing
+# Find Expect and run the custom TCL script to simulate keypresses
+find_program(EXPECT_TOOL expect)
+if(EXPECT_TOOL)
+    add_test(NAME IntegrationTest COMMAND ${EXPECT_TOOL} ${CMAKE_SOURCE_DIR}/tests/integration_test.exp)
+else()
+    message(WARNING "expect tool not found. Integration tests will not be executed.")
+endif()
