@@ -7,6 +7,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN mkdir build && cd build && cmake .. && make
+RUN mkdir -p build && cd build && cmake .. && make
 
 CMD ["./build/calculator"]
