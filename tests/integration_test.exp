@@ -1,0 +1,44 @@
+#!/usr/bin/expect -f
+
+# Set timeout for expectations
+set timeout 5
+
+# Spawn the calculator binary from the build directory
+# We assume this script is called from the build directory, 
+# or the binary is alongside. We'll use the environment or exact path.
+spawn ./calculator
+
+# Expect the main menu title
+expect "=== Interactive Calculator ==="
+
+# The current highlight is on "1. Square Root", so we just send Enter.
+# Enter is represented by \r.
+send "\r"
+
+# Expect the prompt for a number
+expect "Enter a number: "
+
+# Send "16" to calculate sqrt(16)
+send "16\r"
+
+# Expect the result to be printed
+expect "Result:  4"
+
+# The app waits for "Press any key to continue..."
+expect "Press any key to continue..."
+send "\r"
+
+# Now we should be back at the main menu
+expect "=== Interactive Calculator ==="
+
+# Press Down Arrow 4 times to reach "Exit"
+send "\033\[B"
+send "\033\[B"
+send "\033\[B"
+send "\033\[B"
+
+# Send Enter to select "Exit"
+send "\r"
+
+# Ensure the process exits cleanly
+expect eof
