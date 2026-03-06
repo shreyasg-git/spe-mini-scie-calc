@@ -1,0 +1,309 @@
+➜  ~ cd Desktop/spe-mini-scie-calc
+➜  spe-mini-scie-calc git:(main) ✗ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   src/main.cpp
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  spe-mini-scie-calc git:(main) ✗ git add -A
+➜  spe-mini-scie-calc git:(main) ✗ git commit -m "testing webhook trigger"
+[main e003803] testing webhook trigger
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+➜  spe-mini-scie-calc git:(main) git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 353 bytes | 353.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:shreyasg-git/spe-mini-scie-calc.git
+   974df6b..e003803  main -> main
+➜  spe-mini-scie-calc git:(main) git add -A
+➜  spe-mini-scie-calc git:(main) ✗ git commit -m "testing polling trigger"
+[main 0845e03] testing polling trigger
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+➜  spe-mini-scie-calc git:(main) git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 400 bytes | 400.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:shreyasg-git/spe-mini-scie-calc.git
+   e003803..0845e03  main -> main
+➜  spe-mini-scie-calc git:(main) git add -A
+➜  spe-mini-scie-calc git:(main) ✗ git commit -m "testing polling trigger 2"
+[main a7f9119] testing polling trigger 2
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+➜  spe-mini-scie-calc git:(main) git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 353 bytes | 353.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:shreyasg-git/spe-mini-scie-calc.git
+   0845e03..a7f9119  main -> main
+➜  spe-mini-scie-calc git:(main) docker tag
+➜  spe-mini-scie-calc git:(main)
+➜  spe-mini-scie-calc git:(main) docker ps
+permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+➜  spe-mini-scie-calc git:(main) sudo docker ps -a
+[sudo] password for shreyasbg:
+CONTAINER ID   IMAGE                  COMMAND                CREATED             STATUS                         PORTS     NAMES
+49c052e9fcf2   scie-calc              "./build/calculator"   About an hour ago   Exited (0) About an hour ago             sweet_albattani
+904614e4bd25   spe-miniproject-calc   "./build/calculator"   2 hours ago         Exited (0) 2 hours ago                   nostalgic_mcnulty
+df0a18840dc0   ubuntu                 "/bin/bash"            3 weeks ago         Exited (137) 3 weeks ago                 ansible_container
+1051914cce2c   ubuntu                 "/bin/bash"            4 weeks ago         Exited (137) 4 weeks ago                 user1
+6e4bdd256360   ubuntu                 "/bin/bash"            4 weeks ago         Created                                  test
+5e94e96b34bd   ubuntu                 "/bin/bash"            4 weeks ago         Created                                  distracted_hopper
+➜  spe-mini-scie-calc git:(main) sudo usermod -aG docker jenkins
+➜  spe-mini-scie-calc git:(main) sudo systemctl restart jenkins
+➜  spe-mini-scie-calc git:(main) sudo su - jenkins
+
+jenkins@anton:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+jenkins@anton:~$ ^C
+jenkins@anton:~$ ^C
+jenkins@anton:~$ exit
+logout
+➜  spe-mini-scie-calc git:(main) docker login
+
+USING WEB-BASED LOGIN
+
+i Info → To sign in with credentials on the command line, use 'docker login -u <username>'
+
+
+Your one-time device confirmation code is: ZVNV-JBFC
+Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+Waiting for authentication in the browser…
+
+
+WARNING! Your credentials are stored unencrypted in '/home/shreyasbg/.docker/config.json'.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+➜  spe-mini-scie-calc git:(main) docker info
+Client: Docker Engine - Community
+ Version:    29.2.1
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.31.1
+    Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+  compose: Docker Compose (Docker Inc.)
+    Version:  v5.0.2
+    Path:     /usr/libexec/docker/cli-plugins/docker-compose
+
+Server:
+permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+➜  spe-mini-scie-calc git:(main) sudo docker info
+Client: Docker Engine - Community
+ Version:    29.2.1
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.31.1
+    Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+  compose: Docker Compose (Docker Inc.)
+    Version:  v5.0.2
+    Path:     /usr/libexec/docker/cli-plugins/docker-compose
+
+Server:
+ Containers: 6
+  Running: 0
+  Paused: 0
+  Stopped: 6
+ Images: 3
+ Server Version: 29.2.1
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Using metacopy: false
+  Native Overlay Diff: true
+  userxattr: false
+ Logging Driver: json-file
+ Cgroup Driver: systemd
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ CDI spec directories:
+  /etc/cdi
+  /var/run/cdi
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: dea7da592f5d1d2b7755e3a161be07f43fad8f75
+ runc version: v1.3.4-0-gd6d73eb8
+ init version: de40ad0
+ Security Options:
+  apparmor
+  seccomp
+   Profile: builtin
+  cgroupns
+ Kernel Version: 6.17.9-76061709-generic
+ Operating System: Pop!_OS 22.04 LTS
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 8
+ Total Memory: 15.46GiB
+ Name: anton
+ ID: 2f732863-bf81-4935-9d1a-6d223fab49bf
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Experimental: false
+ Insecure Registries:
+  ::1/128
+  127.0.0.0/8
+ Live Restore Enabled: false
+ Firewall Backend: iptables
+
+➜  spe-mini-scie-calc git:(main) docker tag scientific-calculator shreyasdev/scientific-calculator:latest
+➜  spe-mini-scie-calc git:(main)
+➜  spe-mini-scie-calc git:(main)
+➜  spe-mini-scie-calc git:(main) sudo docker ps -a
+CONTAINER ID   IMAGE                  COMMAND                CREATED             STATUS                         PORTS     NAMES
+49c052e9fcf2   scie-calc              "./build/calculator"   About an hour ago   Exited (0) About an hour ago             sweet_albattani
+904614e4bd25   spe-miniproject-calc   "./build/calculator"   2 hours ago         Exited (0) 2 hours ago                   nostalgic_mcnulty
+df0a18840dc0   ubuntu                 "/bin/bash"            3 weeks ago         Exited (137) 3 weeks ago                 ansible_container
+1051914cce2c   ubuntu                 "/bin/bash"            4 weeks ago         Exited (137) 4 weeks ago                 user1
+6e4bdd256360   ubuntu                 "/bin/bash"            4 weeks ago         Created                                  test
+5e94e96b34bd   ubuntu                 "/bin/bash"            4 weeks ago         Created                                  distracted_hopper
+➜  spe-mini-scie-calc git:(main) docker tag scie-calc shreyasg28/sci-calc:latest
+permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+➜  spe-mini-scie-calc git:(main) sudo docker tag scie-calc shreyasg28/sci-calc:latest
+➜  spe-mini-scie-calc git:(main) sudo docker push shreyasg28/scie-calc:latest
+The push refers to repository [docker.io/shreyasg28/scie-calc]
+An image does not exist locally with the tag: shreyasg28/scie-calc
+➜  spe-mini-scie-calc git:(main) sudo docker tag scie-calc shreyasg28/sci-calc
+➜  spe-mini-scie-calc git:(main) sudo docker push shreyasg28/scie-calc:latest
+The push refers to repository [docker.io/shreyasg28/scie-calc]
+An image does not exist locally with the tag: shreyasg28/scie-calc
+➜  spe-mini-scie-calc git:(main) sudo docker ps -a
+CONTAINER ID   IMAGE                  COMMAND                CREATED             STATUS                         PORTS     NAMES
+49c052e9fcf2   scie-calc              "./build/calculator"   About an hour ago   Exited (0) About an hour ago             sweet_albattani
+904614e4bd25   spe-miniproject-calc   "./build/calculator"   2 hours ago         Exited (0) 2 hours ago                   nostalgic_mcnulty
+df0a18840dc0   ubuntu                 "/bin/bash"            3 weeks ago         Exited (137) 3 weeks ago                 ansible_container
+1051914cce2c   ubuntu                 "/bin/bash"            4 weeks ago         Exited (137) 4 weeks ago                 user1
+6e4bdd256360   ubuntu                 "/bin/bash"            4 weeks ago         Created                                  test
+5e94e96b34bd   ubuntu                 "/bin/bash"            4 weeks ago         Created                                  distracted_hopper
+➜  spe-mini-scie-calc git:(main) sudo docker images
+                                                                    i Info →   U  In Use
+IMAGE                         ID             DISK USAGE   CONTENT SIZE   EXTRA
+scie-calc:latest              9d156772e9d3        500MB             0B    U
+shreyasg28/sci-calc:latest    9d156772e9d3        500MB             0B    U
+spe-miniproject-calc:latest   4b40f5074925        500MB             0B    U
+ubuntu:latest                 493218ed0f40       78.1MB             0B    U
+➜  spe-mini-scie-calc git:(main) sudo docker push shreyasg28/sci-calc:latest
+The push refers to repository [docker.io/shreyasg28/sci-calc]
+8a036bf9c493: Preparing
+c9b023bae116: Preparing
+7a18c6953959: Preparing
+b654211eaba8: Preparing
+6b7908e4c747: Preparing
+denied: requested access to the resource is denied
+➜  spe-mini-scie-calc git:(main) sudo docker logout
+Removing login credentials for https://index.docker.io/v1/
+➜  spe-mini-scie-calc git:(main) sudo docker login
+
+USING WEB-BASED LOGIN
+
+i Info → To sign in with credentials on the command line, use 'docker login -u <username>'
+
+
+Your one-time device confirmation code is: LRML-KLNC
+Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+Waiting for authentication in the browser…
+
+
+WARNING! Your credentials are stored unencrypted in '/root/.docker/config.json'.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+➜  spe-mini-scie-calc git:(main) sudo docker push shreyasg28/scie-calc:latest
+The push refers to repository [docker.io/shreyasg28/scie-calc]
+An image does not exist locally with the tag: shreyasg28/scie-calc
+➜  spe-mini-scie-calc git:(main) sudo docker push shreyasg28/sci-calc:latest
+The push refers to repository [docker.io/shreyasg28/sci-calc]
+8a036bf9c493: Pushed
+c9b023bae116: Pushed
+7a18c6953959: Pushed
+b654211eaba8: Pushed
+6b7908e4c747: Mounted from library/ubuntu
+latest: digest: sha256:757c85e0e666f9992ebeebd36228a2e7d91b19999a7ac9c66a661942bd0c878a size: 1366
+➜  spe-mini-scie-calc git:(main) git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Dockerfile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  spe-mini-scie-calc git:(main) ✗ git add -A
+➜  spe-mini-scie-calc git:(main) ✗ git commit -m "docker push thru jenkins"
+[main 8e4cb5a] docker push thru jenkins
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+➜  spe-mini-scie-calc git:(main) git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 298 bytes | 298.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:shreyasg-git/spe-mini-scie-calc.git
+   a7f9119..8e4cb5a  main -> main
+➜  spe-mini-scie-calc git:(main) git add -A
+➜  spe-mini-scie-calc git:(main) ✗ git commit -m "dockerignore"
+[main 304f612] dockerignore
+ 1 file changed, 3 insertions(+)
+ create mode 100644 .dockerignore
+➜  spe-mini-scie-calc git:(main) git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 292 bytes | 292.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:shreyasg-git/spe-mini-scie-calc.git
+   8e4cb5a..304f612  main -> main
+➜  spe-mini-scie-calc git:(main) sudo su - jenkins
+jenkins@anton:~$ docker login
+
+USING WEB-BASED LOGIN
+
+i Info → To sign in with credentials on the command line, use 'docker login -u <username>'
+
+
+Your one-time device confirmation code is: XFGB-RTWH
+Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+Waiting for authentication in the browser…
+
+
+WARNING! Your credentials are stored unencrypted in '/var/lib/jenkins/.docker/config.json'.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+jenkins@anton:~$ exit
+logout

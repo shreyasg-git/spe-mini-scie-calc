@@ -1,0 +1,597 @@
+➜  ~ cd Desktop
+➜  Desktop git clone git@github.com:shreyasg-git/spe-miniproject.git
+Cloning into 'spe-miniproject'...
+warning: You appear to have cloned an empty repository.
+➜  Desktop cd spe
+➜  spe cd ../spe-miniproject
+➜  spe-miniproject git:(main) agrv .
+zsh: command not found: agrv
+➜  spe-miniproject git:(main) antigravity .
+➜  spe-miniproject git:(main) g++ ./main.cpp -o temp
+➜  spe-miniproject git:(main) ✗ ./temp
+Scientific Calculator
+➜  spe-miniproject git:(main) ✗ mkdir build
+➜  spe-miniproject git:(main) ✗ cd build
+➜  build git:(main) ✗ cmake ..
+CMake Error: The source directory "/home/shreyasbg/Desktop/spe-miniproject" does not appear to contain CMakeLists.txt.
+Specify --help for usage, or press the help button on the CMake GUI.
+➜  build git:(main) ✗ cd build
+cd: no such file or directory: build
+➜  build git:(main) ✗ cmake ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+CMake Error at CMakeLists.txt:6 (add_executable):
+  Cannot find source file:
+
+    src/main.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+
+CMake Error at CMakeLists.txt:6 (add_executable):
+  No SOURCES given to target: calculator
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+➜  build git:(main) ✗ cmake ..
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/shreyasbg/Desktop/spe-miniproject/build
+➜  build git:(main) ✗ make
+[ 50%] Building CXX object CMakeFiles/calculator.dir/src/main.cpp.o
+[100%] Linking CXX executable calculator
+[100%] Built target calculator
+➜  build git:(main) ✗ GIT_AUTHOR_DATE="2026-03-03T10:30:56" GIT_COMMITTER_DATE="2026-03-03T10:30:56" git commit -m "intial setup, basic CMake"
+On branch main
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	../CMakeLists.txt
+	./
+	../src/
+	../temp
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜  build git:(main) ✗ git add -A
+➜  build git:(main) ✗ GIT_AUTHOR_DATE="2026-03-03T10:30:56" GIT_COMMITTER_DATE="2026-03-03T10:30:56" git commit -m "intial setup, basic CMake"
+[main (root-commit) 09dd670] intial setup, basic CMake
+ 34 files changed, 3316 insertions(+)
+ create mode 100644 CMakeLists.txt
+ create mode 100644 build/CMakeCache.txt
+ create mode 100644 build/CMakeFiles/3.22.1/CMakeCCompiler.cmake
+ create mode 100644 build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake
+ create mode 100755 build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_C.bin
+ create mode 100755 build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_CXX.bin
+ create mode 100644 build/CMakeFiles/3.22.1/CMakeSystem.cmake
+ create mode 100644 build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c
+ create mode 100755 build/CMakeFiles/3.22.1/CompilerIdC/a.out
+ create mode 100644 build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
+ create mode 100755 build/CMakeFiles/3.22.1/CompilerIdCXX/a.out
+ create mode 100644 build/CMakeFiles/CMakeDirectoryInformation.cmake
+ create mode 100644 build/CMakeFiles/CMakeOutput.log
+ create mode 100644 build/CMakeFiles/Makefile.cmake
+ create mode 100644 build/CMakeFiles/Makefile2
+ create mode 100644 build/CMakeFiles/TargetDirectories.txt
+ create mode 100644 build/CMakeFiles/calculator.dir/DependInfo.cmake
+ create mode 100644 build/CMakeFiles/calculator.dir/build.make
+ create mode 100644 build/CMakeFiles/calculator.dir/cmake_clean.cmake
+ create mode 100644 build/CMakeFiles/calculator.dir/compiler_depend.make
+ create mode 100644 build/CMakeFiles/calculator.dir/compiler_depend.ts
+ create mode 100644 build/CMakeFiles/calculator.dir/depend.make
+ create mode 100644 build/CMakeFiles/calculator.dir/flags.make
+ create mode 100644 build/CMakeFiles/calculator.dir/link.txt
+ create mode 100644 build/CMakeFiles/calculator.dir/progress.make
+ create mode 100644 build/CMakeFiles/calculator.dir/src/main.cpp.o
+ create mode 100644 build/CMakeFiles/calculator.dir/src/main.cpp.o.d
+ create mode 100644 build/CMakeFiles/cmake.check_cache
+ create mode 100644 build/CMakeFiles/progress.marks
+ create mode 100644 build/Makefile
+ create mode 100755 build/calculator
+ create mode 100644 build/cmake_install.cmake
+ create mode 100644 src/main.cpp
+ create mode 100755 temp
+➜  build git:(main) git push
+Enumerating objects: 43, done.
+Counting objects: 100% (43/43), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (40/40), done.
+Writing objects: 100% (43/43), 33.66 KiB | 5.61 MiB/s, done.
+Total 43 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), done.
+To github.com:shreyasg-git/spe-miniproject.git
+ * [new branch]      main -> main
+➜  build git:(main) touch Dockerfile
+➜  build git:(main) ✗ docker build -t calc .
+ERROR: permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+➜  build git:(main) ✗ sudo docker build -t calc .
+[sudo] password for shreyasbg:
+[+] Building 0.1s (1/1) FINISHED                                    docker:default
+ => [internal] load build definition from Dockerfile                          0.0s
+ => => transferring dockerfile: 2B                                            0.0s
+ERROR: failed to build: failed to solve: failed to read dockerfile: open Dockerfile: no such file or directory
+➜  build git:(main) ✗ cd ..
+➜  spe-miniproject git:(main) ✗ sudo docker build -t calc .
+[+] Building 53.1s (6/9)                                            docker:default
+ => [internal] load build definition from Dockerfile                          0.0s
+ => => transferring dockerfile: 227B                                          0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:22.04               2.5s
+ => [internal] load .dockerignore                                             0.0s
+ => => transferring context: 2B                                               0.0s
+ => [1/5] FROM docker.io/library/ubuntu:22.04@sha256:3ba65aa20f86a0fad9df2b2  4.0s
+ => => resolve docker.io/library/ubuntu:22.04@sha256:3ba65aa20f86a0fad9df2b2  0.0s
+ => => sha256:3ba65aa20f86a0fad9df2b2c259c613df006b2e6d0bfcc 6.69kB / 6.69kB  0.0s
+ => => sha256:5c8b2c0a6c745bc177669abfaa716b4bc57d58e2ea3882fb5d 424B / 424B  0.0s
+ => => sha256:8ea4cbcf3a26ffe08ba1fa548831bc318beb1a689e921b 2.29kB / 2.29kB  0.0s
+ => => sha256:b1cba2e842ca52b95817f958faf99734080c78e92e43 29.54MB / 29.54MB  3.3s
+ => => extracting sha256:b1cba2e842ca52b95817f958faf99734080c78e92e43ce609cd  0.6s
+ => [internal] load build context                                             0.0s
+ => => transferring context: 332.80kB                                         0.0s
+ => CANCELED [2/5] RUN apt-get update &&     apt-get install -y build-essen  46.5s
+ERROR: failed to build: failed to solve: Canceled: context canceled
+➜  spe-miniproject git:(main) ✗ sudo docker build -t spe-miniproject-calc .
+[+] Building 43.1s (9/9) FINISHED                                   docker:default
+ => [internal] load build definition from Dockerfile                          0.0s
+ => => transferring dockerfile: 227B                                          0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:22.04               0.8s
+ => [internal] load .dockerignore                                             0.0s
+ => => transferring context: 2B                                               0.0s
+ => CACHED [1/5] FROM docker.io/library/ubuntu:22.04@sha256:3ba65aa20f86a0fa  0.0s
+ => [internal] load build context                                             0.0s
+ => => transferring context: 8.96kB                                           0.0s
+ => [2/5] RUN apt-get update &&     apt-get install -y build-essential cmak  41.8s
+ => [3/5] WORKDIR /app                                                        0.1s
+ => [4/5] COPY . .                                                            0.1s
+ => ERROR [5/5] RUN mkdir build && cd build && cmake .. && make               0.2s
+------
+ > [5/5] RUN mkdir build && cd build && cmake .. && make:
+0.160 mkdir: cannot create directory 'build': File exists
+------
+Dockerfile:10
+--------------------
+   8 |     COPY . .
+   9 |
+  10 | >>> RUN mkdir build && cd build && cmake .. && make
+  11 |
+  12 |     CMD ["./build/calculator"]
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c mkdir build && cd build && cmake .. && make" did not complete successfully: exit code: 1
+➜  spe-miniproject git:(main) ✗ sudo docker build -t spe-miniproject-calc .
+[+] Building 3.7s (10/10) FINISHED                                  docker:default
+ => [internal] load build definition from Dockerfile                          0.0s
+ => => transferring dockerfile: 227B                                          0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:22.04               0.9s
+ => [internal] load .dockerignore                                             0.0s
+ => => transferring context: 2B                                               0.0s
+ => [1/5] FROM docker.io/library/ubuntu:22.04@sha256:3ba65aa20f86a0fad9df2b2  0.0s
+ => [internal] load build context                                             0.0s
+ => => transferring context: 6.48kB                                           0.0s
+ => CACHED [2/5] RUN apt-get update &&     apt-get install -y build-essentia  0.0s
+ => CACHED [3/5] WORKDIR /app                                                 0.0s
+ => [4/5] COPY . .                                                            0.0s
+ => [5/5] RUN mkdir build && cd build && cmake .. && make                     0.6s
+ => exporting to image                                                        1.9s
+ => => exporting layers                                                       1.9s
+ => => writing image sha256:4b40f5074925336ca46f54535a72cfb5d5cf46031e0547ba  0.0s
+ => => naming to docker.io/library/spe-miniproject-calc                       0.0s
+➜  spe-miniproject git:(main) ✗ docker run spe-miniproject-calc
+permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+➜  spe-miniproject git:(main) ✗ sudo docker run spe-miniproject-calc
+Scientific Calculator
+➜  spe-miniproject git:(main) ✗ GIT_AUTHOR_DATE="2026-03-03T11:45:26" GIT_COMMITTER_DATE="2026-03-03T11:45:36" git commit -m "introduced Docker, Dockerfile added"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    build/CMakeCache.txt
+	deleted:    build/CMakeFiles/3.22.1/CMakeCCompiler.cmake
+	deleted:    build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake
+	deleted:    build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_C.bin
+	deleted:    build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_CXX.bin
+	deleted:    build/CMakeFiles/3.22.1/CMakeSystem.cmake
+	deleted:    build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c
+	deleted:    build/CMakeFiles/3.22.1/CompilerIdC/a.out
+	deleted:    build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
+	deleted:    build/CMakeFiles/3.22.1/CompilerIdCXX/a.out
+	deleted:    build/CMakeFiles/CMakeDirectoryInformation.cmake
+	deleted:    build/CMakeFiles/CMakeOutput.log
+	deleted:    build/CMakeFiles/Makefile.cmake
+	deleted:    build/CMakeFiles/Makefile2
+	deleted:    build/CMakeFiles/TargetDirectories.txt
+	deleted:    build/CMakeFiles/calculator.dir/DependInfo.cmake
+	deleted:    build/CMakeFiles/calculator.dir/build.make
+	deleted:    build/CMakeFiles/calculator.dir/cmake_clean.cmake
+	deleted:    build/CMakeFiles/calculator.dir/compiler_depend.make
+	deleted:    build/CMakeFiles/calculator.dir/compiler_depend.ts
+	deleted:    build/CMakeFiles/calculator.dir/depend.make
+	deleted:    build/CMakeFiles/calculator.dir/flags.make
+	deleted:    build/CMakeFiles/calculator.dir/link.txt
+	deleted:    build/CMakeFiles/calculator.dir/progress.make
+	deleted:    build/CMakeFiles/calculator.dir/src/main.cpp.o
+	deleted:    build/CMakeFiles/calculator.dir/src/main.cpp.o.d
+	deleted:    build/CMakeFiles/cmake.check_cache
+	deleted:    build/CMakeFiles/progress.marks
+	deleted:    build/Makefile
+	deleted:    build/calculator
+	deleted:    build/cmake_install.cmake
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Dockerfile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  spe-miniproject git:(main) ✗ git add -A
+➜  spe-miniproject git:(main) ✗ GIT_AUTHOR_DATE="2026-03-03T11:45:26" GIT_COMMITTER_DATE="2026-03-03T11:45:36" git commit -m "introduced Docker, Dockerfile added"
+[main a51e4e9] introduced Docker, Dockerfile added
+ 32 files changed, 12 insertions(+), 3305 deletions(-)
+ create mode 100644 Dockerfile
+ delete mode 100644 build/CMakeCache.txt
+ delete mode 100644 build/CMakeFiles/3.22.1/CMakeCCompiler.cmake
+ delete mode 100644 build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake
+ delete mode 100755 build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_C.bin
+ delete mode 100755 build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_CXX.bin
+ delete mode 100644 build/CMakeFiles/3.22.1/CMakeSystem.cmake
+ delete mode 100644 build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c
+ delete mode 100755 build/CMakeFiles/3.22.1/CompilerIdC/a.out
+ delete mode 100644 build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
+ delete mode 100755 build/CMakeFiles/3.22.1/CompilerIdCXX/a.out
+ delete mode 100644 build/CMakeFiles/CMakeDirectoryInformation.cmake
+ delete mode 100644 build/CMakeFiles/CMakeOutput.log
+ delete mode 100644 build/CMakeFiles/Makefile.cmake
+ delete mode 100644 build/CMakeFiles/Makefile2
+ delete mode 100644 build/CMakeFiles/TargetDirectories.txt
+ delete mode 100644 build/CMakeFiles/calculator.dir/DependInfo.cmake
+ delete mode 100644 build/CMakeFiles/calculator.dir/build.make
+ delete mode 100644 build/CMakeFiles/calculator.dir/cmake_clean.cmake
+ delete mode 100644 build/CMakeFiles/calculator.dir/compiler_depend.make
+ delete mode 100644 build/CMakeFiles/calculator.dir/compiler_depend.ts
+ delete mode 100644 build/CMakeFiles/calculator.dir/depend.make
+ delete mode 100644 build/CMakeFiles/calculator.dir/flags.make
+ delete mode 100644 build/CMakeFiles/calculator.dir/link.txt
+ delete mode 100644 build/CMakeFiles/calculator.dir/progress.make
+ delete mode 100644 build/CMakeFiles/calculator.dir/src/main.cpp.o
+ delete mode 100644 build/CMakeFiles/calculator.dir/src/main.cpp.o.d
+ delete mode 100644 build/CMakeFiles/cmake.check_cache
+ delete mode 100644 build/CMakeFiles/progress.marks
+ delete mode 100644 build/Makefile
+ delete mode 100755 build/calculator
+ delete mode 100644 build/cmake_install.cmake
+➜  spe-miniproject git:(main) git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 506 bytes | 506.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:shreyasg-git/spe-miniproject.git
+   09dd670..a51e4e9  main -> main
+➜  spe-miniproject git:(main) git branch dev
+➜  spe-miniproject git:(main) git checkout dev
+Switched to branch 'dev'
+➜  spe-miniproject git:(dev) sudo systemctl start jenkins
+➜  spe-miniproject git:(dev)
+➜  spe-miniproject git:(dev) ✗
+➜  spe-miniproject git:(dev) ✗ cd ..
+➜  Desktop git clone git@github.com:shreyasg-git/spe-mini-scie-calc.git
+Cloning into 'spe-mini-scie-calc'...
+warning: You appear to have cloned an empty repository.
+➜  Desktop cd spe-mini-scie-calc
+➜  spe-mini-scie-calc git:(main) antigravity .
+➜  spe-mini-scie-calc git:(main) mkdir src
+➜  spe-mini-scie-calc git:(main) cd src
+➜  src git:(main) touch main.cpp
+➜  src git:(main) ✗ mkdir build
+➜  src git:(main) ✗ cd build
+➜  build git:(main) ✗ cmakr
+zsh: command not found: cmakr
+➜  build git:(main) ✗ cmake ..
+CMake Error: The source directory "/home/shreyasbg/Desktop/spe-mini-scie-calc/src" does not appear to contain CMakeLists.txt.
+Specify --help for usage, or press the help button on the CMake GUI.
+➜  build git:(main) ✗ make ..
+make: Nothing to be done for '..'.
+➜  build git:(main) ✗ cmake ..
+CMake Error: The source directory "/home/shreyasbg/Desktop/spe-mini-scie-calc/src" does not appear to contain CMakeLists.txt.
+Specify --help for usage, or press the help button on the CMake GUI.
+➜  build git:(main) ✗ cd ..
+➜  spe-mini-scie-calc git:(main) ✗ cd build
+➜  build git:(main) ✗ cmake ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/shreyasbg/Desktop/spe-mini-scie-calc/build
+➜  build git:(main) ✗ make
+[ 50%] Building CXX object CMakeFiles/calculator.dir/src/main.cpp.o
+[100%] Linking CXX executable calculator
+[100%] Built target calculator
+➜  build git:(main) ✗ git add -A
+➜  build git:(main) ✗ git commit -m "basic CMake setup"
+[main (root-commit) 5942f93] basic CMake setup
+ 33 files changed, 3389 insertions(+)
+ create mode 100644 CMakeLists.txt
+ create mode 100644 build/CMakeCache.txt
+ create mode 100644 build/CMakeFiles/3.22.1/CMakeCCompiler.cmake
+ create mode 100644 build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake
+ create mode 100755 build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_C.bin
+ create mode 100755 build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_CXX.bin
+ create mode 100644 build/CMakeFiles/3.22.1/CMakeSystem.cmake
+ create mode 100644 build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c
+ create mode 100755 build/CMakeFiles/3.22.1/CompilerIdC/a.out
+ create mode 100644 build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
+ create mode 100755 build/CMakeFiles/3.22.1/CompilerIdCXX/a.out
+ create mode 100644 build/CMakeFiles/CMakeDirectoryInformation.cmake
+ create mode 100644 build/CMakeFiles/CMakeOutput.log
+ create mode 100644 build/CMakeFiles/Makefile.cmake
+ create mode 100644 build/CMakeFiles/Makefile2
+ create mode 100644 build/CMakeFiles/TargetDirectories.txt
+ create mode 100644 build/CMakeFiles/calculator.dir/DependInfo.cmake
+ create mode 100644 build/CMakeFiles/calculator.dir/build.make
+ create mode 100644 build/CMakeFiles/calculator.dir/cmake_clean.cmake
+ create mode 100644 build/CMakeFiles/calculator.dir/compiler_depend.make
+ create mode 100644 build/CMakeFiles/calculator.dir/compiler_depend.ts
+ create mode 100644 build/CMakeFiles/calculator.dir/depend.make
+ create mode 100644 build/CMakeFiles/calculator.dir/flags.make
+ create mode 100644 build/CMakeFiles/calculator.dir/link.txt
+ create mode 100644 build/CMakeFiles/calculator.dir/progress.make
+ create mode 100644 build/CMakeFiles/calculator.dir/src/main.cpp.o
+ create mode 100644 build/CMakeFiles/calculator.dir/src/main.cpp.o.d
+ create mode 100644 build/CMakeFiles/cmake.check_cache
+ create mode 100644 build/CMakeFiles/progress.marks
+ create mode 100644 build/Makefile
+ create mode 100755 build/calculator
+ create mode 100644 build/cmake_install.cmake
+ create mode 100644 src/main.cpp
+➜  build git:(main) git push
+Enumerating objects: 43, done.
+Counting objects: 100% (43/43), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (40/40), done.
+Writing objects: 100% (43/43), 34.08 KiB | 5.68 MiB/s, done.
+Total 43 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), done.
+To github.com:shreyasg-git/spe-mini-scie-calc.git
+ * [new branch]      main -> main
+➜  build git:(main) docker list
+docker: unknown command: docker list
+
+Run 'docker --help' for more information
+➜  build git:(main) ✗ docker ps
+permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+➜  build git:(main) ✗ sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+➜  build git:(main) ✗ sudo docker ps -1
+unknown shorthand flag: '1' in -1
+
+Usage:  docker ps [OPTIONS]
+
+Run 'docker ps --help' for more information
+➜  build git:(main) ✗ sudo docker ps -a
+CONTAINER ID   IMAGE                  COMMAND                CREATED          STATUS                      PORTS     NAMES
+904614e4bd25   spe-miniproject-calc   "./build/calculator"   20 minutes ago   Exited (0) 20 minutes ago             nostalgic_mcnulty
+df0a18840dc0   ubuntu                 "/bin/bash"            3 weeks ago      Exited (137) 3 weeks ago              ansible_container
+1051914cce2c   ubuntu                 "/bin/bash"            4 weeks ago      Exited (137) 4 weeks ago              user1
+6e4bdd256360   ubuntu                 "/bin/bash"            4 weeks ago      Created                               test
+5e94e96b34bd   ubuntu                 "/bin/bash"            4 weeks ago      Created                               distracted_hopper
+➜  build git:(main) ✗ sudo docker run sciecalc
+Unable to find image 'sciecalc:latest' locally
+docker: Error response from daemon: pull access denied for sciecalc, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+
+Run 'docker run --help' for more information
+➜  build git:(main) ✗ sudo docker build -t scie-calc .
+[+] Building 0.1s (1/1) FINISHED                                    docker:default
+ => [internal] load build definition from Dockerfile                          0.0s
+ => => transferring dockerfile: 2B                                            0.0s
+ERROR: failed to build: failed to solve: failed to read dockerfile: open Dockerfile: no such file or directory
+➜  build git:(main) ✗ cd ..
+➜  spe-mini-scie-calc git:(main) ✗ ls
+build  CMakeLists.txt  Dockerfile  src
+➜  spe-mini-scie-calc git:(main) ✗ sudo docker build -t scie-calc .
+[+] Building 1.7s (9/9) FINISHED                                    docker:default
+ => [internal] load build definition from Dockerfile                          0.0s
+ => => transferring dockerfile: 227B                                          0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:22.04               1.3s
+ => [internal] load .dockerignore                                             0.0s
+ => => transferring context: 2B                                               0.0s
+ => [1/5] FROM docker.io/library/ubuntu:22.04@sha256:3ba65aa20f86a0fad9df2b2  0.0s
+ => [internal] load build context                                             0.0s
+ => => transferring context: 322.09kB                                         0.0s
+ => CACHED [2/5] RUN apt-get update &&     apt-get install -y build-essentia  0.0s
+ => CACHED [3/5] WORKDIR /app                                                 0.0s
+ => [4/5] COPY . .                                                            0.1s
+ => ERROR [5/5] RUN mkdir build && cd build && cmake .. && make               0.2s
+------
+ > [5/5] RUN mkdir build && cd build && cmake .. && make:
+0.140 mkdir: cannot create directory 'build': File exists
+------
+Dockerfile:10
+--------------------
+   8 |     COPY . .
+   9 |
+  10 | >>> RUN mkdir build && cd build && cmake .. && make
+  11 |
+  12 |     CMD ["./build/calculator"]
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c mkdir build && cd build && cmake .. && make" did not complete successfully: exit code: 1
+➜  spe-mini-scie-calc git:(main) ✗ sudo docker build -t scie-calc .
+[+] Building 1.2s (10/10) FINISHED                                  docker:default
+ => [internal] load build definition from Dockerfile                          0.0s
+ => => transferring dockerfile: 227B                                          0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:22.04               0.3s
+ => [internal] load .dockerignore                                             0.0s
+ => => transferring context: 2B                                               0.0s
+ => [1/5] FROM docker.io/library/ubuntu:22.04@sha256:3ba65aa20f86a0fad9df2b2  0.0s
+ => [internal] load build context                                             0.0s
+ => => transferring context: 6.45kB                                           0.0s
+ => CACHED [2/5] RUN apt-get update &&     apt-get install -y build-essentia  0.0s
+ => CACHED [3/5] WORKDIR /app                                                 0.0s
+ => [4/5] COPY . .                                                            0.0s
+ => [5/5] RUN mkdir build && cd build && cmake .. && make                     0.7s
+ => exporting to image                                                        0.1s
+ => => exporting layers                                                       0.1s
+ => => writing image sha256:9d156772e9d3855eab3dbd007262a8aa36c98d7512df685b  0.0s
+ => => naming to docker.io/library/scie-calc                                  0.0s
+➜  spe-mini-scie-calc git:(main) ✗ docker run scie-calc
+permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+➜  spe-mini-scie-calc git:(main) ✗ sudo docker run scie-calc
+Scientific Calculator
+➜  spe-mini-scie-calc git:(main) ✗ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    build/CMakeCache.txt
+	deleted:    build/CMakeFiles/3.22.1/CMakeCCompiler.cmake
+	deleted:    build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake
+	deleted:    build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_C.bin
+	deleted:    build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_CXX.bin
+	deleted:    build/CMakeFiles/3.22.1/CMakeSystem.cmake
+	deleted:    build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c
+	deleted:    build/CMakeFiles/3.22.1/CompilerIdC/a.out
+	deleted:    build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
+	deleted:    build/CMakeFiles/3.22.1/CompilerIdCXX/a.out
+	deleted:    build/CMakeFiles/CMakeDirectoryInformation.cmake
+	deleted:    build/CMakeFiles/CMakeOutput.log
+	deleted:    build/CMakeFiles/Makefile.cmake
+	deleted:    build/CMakeFiles/Makefile2
+	deleted:    build/CMakeFiles/TargetDirectories.txt
+	deleted:    build/CMakeFiles/calculator.dir/DependInfo.cmake
+	deleted:    build/CMakeFiles/calculator.dir/build.make
+	deleted:    build/CMakeFiles/calculator.dir/cmake_clean.cmake
+	deleted:    build/CMakeFiles/calculator.dir/compiler_depend.make
+	deleted:    build/CMakeFiles/calculator.dir/compiler_depend.ts
+	deleted:    build/CMakeFiles/calculator.dir/depend.make
+	deleted:    build/CMakeFiles/calculator.dir/flags.make
+	deleted:    build/CMakeFiles/calculator.dir/link.txt
+	deleted:    build/CMakeFiles/calculator.dir/progress.make
+	deleted:    build/CMakeFiles/calculator.dir/src/main.cpp.o
+	deleted:    build/CMakeFiles/calculator.dir/src/main.cpp.o.d
+	deleted:    build/CMakeFiles/cmake.check_cache
+	deleted:    build/CMakeFiles/progress.marks
+	deleted:    build/Makefile
+	deleted:    build/calculator
+	deleted:    build/cmake_install.cmake
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Dockerfile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  spe-mini-scie-calc git:(main) ✗ git add -A
+➜  spe-mini-scie-calc git:(main) ✗ git commit -m "added docker"
+[main 9e8be11] added docker
+ 32 files changed, 12 insertions(+), 3380 deletions(-)
+ create mode 100644 Dockerfile
+ delete mode 100644 build/CMakeCache.txt
+ delete mode 100644 build/CMakeFiles/3.22.1/CMakeCCompiler.cmake
+ delete mode 100644 build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake
+ delete mode 100755 build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_C.bin
+ delete mode 100755 build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_CXX.bin
+ delete mode 100644 build/CMakeFiles/3.22.1/CMakeSystem.cmake
+ delete mode 100644 build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c
+ delete mode 100755 build/CMakeFiles/3.22.1/CompilerIdC/a.out
+ delete mode 100644 build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
+ delete mode 100755 build/CMakeFiles/3.22.1/CompilerIdCXX/a.out
+ delete mode 100644 build/CMakeFiles/CMakeDirectoryInformation.cmake
+ delete mode 100644 build/CMakeFiles/CMakeOutput.log
+ delete mode 100644 build/CMakeFiles/Makefile.cmake
+ delete mode 100644 build/CMakeFiles/Makefile2
+ delete mode 100644 build/CMakeFiles/TargetDirectories.txt
+ delete mode 100644 build/CMakeFiles/calculator.dir/DependInfo.cmake
+ delete mode 100644 build/CMakeFiles/calculator.dir/build.make
+ delete mode 100644 build/CMakeFiles/calculator.dir/cmake_clean.cmake
+ delete mode 100644 build/CMakeFiles/calculator.dir/compiler_depend.make
+ delete mode 100644 build/CMakeFiles/calculator.dir/compiler_depend.ts
+ delete mode 100644 build/CMakeFiles/calculator.dir/depend.make
+ delete mode 100644 build/CMakeFiles/calculator.dir/flags.make
+ delete mode 100644 build/CMakeFiles/calculator.dir/link.txt
+ delete mode 100644 build/CMakeFiles/calculator.dir/progress.make
+ delete mode 100644 build/CMakeFiles/calculator.dir/src/main.cpp.o
+ delete mode 100644 build/CMakeFiles/calculator.dir/src/main.cpp.o.d
+ delete mode 100644 build/CMakeFiles/cmake.check_cache
+ delete mode 100644 build/CMakeFiles/progress.marks
+ delete mode 100644 build/Makefile
+ delete mode 100755 build/calculator
+ delete mode 100644 build/cmake_install.cmake
+➜  spe-mini-scie-calc git:(main) git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 459 bytes | 459.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:shreyasg-git/spe-mini-scie-calc.git
+   5942f93..9e8be11  main -> main
+➜  spe-mini-scie-calc git:(main) git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+➜  spe-mini-scie-calc git:(main) git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Jenkinsfile
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜  spe-mini-scie-calc git:(main) ✗ git add -A
+➜  spe-mini-scie-calc git:(main) ✗ git commit -m "added jenkins - 3 stages - Checkout build and run binary"
+[main 2603604] added jenkins - 3 stages - Checkout build and run binary
+ 1 file changed, 32 insertions(+)
+ create mode 100644 Jenkinsfile
+➜  spe-mini-scie-calc git:(main) git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 562 bytes | 562.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:shreyasg-git/spe-mini-scie-calc.git
+   9e8be11..2603604  main -> main
+➜  spe-mini-scie-calc git:(main) git add -A
+➜  spe-mini-scie-calc git:(main) ✗ git commit -m "testing trigger"
+[main 974df6b] testing trigger
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+➜  spe-mini-scie-calc git:(main) git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 394 bytes | 394.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:shreyasg-git/spe-mini-scie-calc.git
+   2603604..974df6b  main -> main
+➜  spe-mini-scie-calc git:(main) sudo snap install ngrok
+[sudo] password for shreyasbg:
+ngrok (v3/stable) 3.36.1 from Ngrok (ngrok-publisher) installed
+➜  spe-mini-scie-calc git:(main) ngrok http 8080
+➜  spe-mini-scie-calc git:(main)
