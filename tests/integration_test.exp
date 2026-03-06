@@ -4,8 +4,6 @@
 set timeout 5
 
 # Spawn the calculator binary from the build directory
-# We assume this script is called from the build directory, 
-# or the binary is alongside. We'll use the environment or exact path.
 spawn ./calculator
 
 # Expect the main menu title

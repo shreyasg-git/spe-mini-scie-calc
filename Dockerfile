@@ -7,8 +7,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN mkdir -p build && cd build && cmake .. && make && ctest --output-on-failure
-
 ENV TERM=xterm-256color
+
+RUN mkdir -p build && cd build && cmake .. && make && ctest --output-on-failure
 
 CMD ["./build/calculator"]
