@@ -14,7 +14,7 @@ ENV TERM=xterm-256color
 
 # Mount the build cache so Google Test + Intermediate objects persist between docker builds!
 RUN --mount=type=cache,target=/app/build \
-    mkdir -p build && cd build && cmake .. && make && ctest --output-on-failure && \
+    mkdir -p build && cd build && cmake .. && make && \
     cp ./calculator /app/calculator
 
 CMD ["./calculator"]

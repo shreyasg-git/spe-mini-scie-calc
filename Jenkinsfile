@@ -16,6 +16,26 @@ pipeline {
             }
         }
 
+        stage('Unit Tests') {
+            steps {
+                sh '''
+                cd build
+                # Run all tests EXCEPT IntegrationTest
+                ctest --output-on-failure -E "^IntegrationTest$"
+                '''
+            }
+        }
+
+        stage('Integration Tests') {
+            steps {
+                sh '''
+                cd build
+                # Run ONLY the IntegrationTest
+                ctest --output-on-failure -R "^IntegrationTest$"
+                '''
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 sh '''
