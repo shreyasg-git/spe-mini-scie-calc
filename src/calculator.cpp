@@ -24,4 +24,11 @@ namespace calculator {
         }
         return result;
     }
+
+    double natural_log(double x) {
+        if (x <= 0) {
+            throw std::invalid_argument("Cannot calculate the natural logarithm of zero or a negative number.");
+        }
+        return std::log(x);
+    }
 }

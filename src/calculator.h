@@ -13,6 +13,12 @@ namespace calculator {
      * Throws std::invalid_argument if the number is negative or not an integer.
      */
     double factorial(double x);
+
+    /**
+     * Calculates the natural logarithm of a number.
+     * Throws std::invalid_argument if the number is zero or negative.
+     */
+    double natural_log(double x);
 }
 
 #endif // CALCULATOR_H

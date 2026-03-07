@@ -51,6 +51,31 @@ send "\r"
 # Now we should be back at the main menu
 expect "=== Interactive Calculator ==="
 
+# Press Down Arrow 2 times to reach "3. Natural Logarithm" (Assuming cursor resets, but actually our script presses Down from the top)
+# Wait, let's just make sure we are navigating correctly. When we return to the menu, highlight is 0.
+# So pressing Down Arrow 2 times gets us to 2 (Natural Logarithm)
+send "\033\[B"
+send "\033\[B"
+
+# Send Enter to select "Natural Logarithm"
+send "\r"
+
+# Expect the prompt for a number
+expect "Enter a number: "
+
+# Send "1" to calculate ln(1)
+send "1\r"
+
+# Expect the result to be printed
+expect "Result:  0"
+
+# The app waits for "Press any key to continue..."
+expect "Press any key to continue..."
+send "\r"
+
+# Now we should be back at the main menu
+expect "=== Interactive Calculator ==="
+
 # Press Down Arrow 4 times to reach "Exit"
 send "\033\[B"
 send "\033\[B"
