@@ -17,4 +17,9 @@ RUN --mount=type=cache,target=/app/build \
     mkdir -p build && cd build && cmake .. && make && \
     cp ./calculator /app/calculator
 
-CMD ["./calculator"]
+# Install Gotty to serve the CLI app over the web
+RUN curl -sLk https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_linux_amd64.tar.gz | tar xzC /usr/local/bin
+
+EXPOSE 8080
+
+CMD ["gotty", "-w", "-p", "8080", "./calculator"]

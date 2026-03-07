@@ -53,5 +53,12 @@ pipeline {
             }
         }
 
+        stage('Deploy (Ansible)') {
+            steps {
+                // Using connection=local assumes Jenkins has ansible installed and Docker access
+                sh 'ansible-playbook -i ansible/inventory.ini ansible/deploy.yml --connection=local'
+            }
+        }
+
     }
 }

@@ -1,0 +1,23 @@
+---
+- name: Deploy Calculator Web App
+  hosts: all
+  become: true
+  tasks:
+    - name: Ensure Docker is installed (assuming it is for this pipeline, but good practice)
+      command: docker --version
+      register: docker_version
+      changed_when: false
+
+    - name: Pull the latest calculator Docker image
+      command: docker pull shreyasg28/sci-calc:latest
+
+    - name: Stop existing calculator container if running
+      command: docker stop sci-calc
+      ignore_errors: yes
+
+    - name: Remove existing calculator container
+      command: docker rm sci-calc
+      ignore_errors: yes
+
+    - name: Run the new calculator container with Gotty on port 8080
+      command: docker run -d --name sci-calc -p 8080:8080 shreyasg28/sci-calc:latest
