@@ -3,11 +3,7 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/shreyasg-git/spe-mini-scie-calc.git'
-            }
-        }
+       
 
         stage('Build (CMake)') {
             steps {
