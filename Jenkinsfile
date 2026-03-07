@@ -61,4 +61,12 @@ pipeline {
         }
 
     }
+
+    post {
+        always {
+            mail to: 'shreyasbgangurde@gmail.com',
+                 subject: "Jenkins Pipeline Status: ${currentBuild.fullDisplayName}",
+                 body: "The pipeline ${env.JOB_NAME} build ${env.BUILD_NUMBER} finished with status: ${currentBuild.currentResult}.\nCheck console output at: ${env.BUILD_URL}"
+        }
+    }
 }
