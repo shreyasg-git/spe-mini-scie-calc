@@ -19,6 +19,11 @@ namespace calculator {
      * Throws std::invalid_argument if the number is zero or negative.
      */
     double natural_log(double x);
+
+    /**
+     * Calculates the power of a base to an exponent (base^exponent).
+     */
+    double power(double base, double exponent);
 }
 
 #endif // CALCULATOR_H

@@ -16,13 +16,14 @@ int main() {
 
   std::vector<std::string> choices = {
       "Square Root", "Factorial",
-      "Natural Logarithm", "Power (unimplemented)", "Exit"};
+      "Natural Logarithm", "Power", "Exit"};
   int num_choices = choices.size();
   int highlight = 0;
   int choice = -1;
   int c;
 
   double number;
+  double exponent;
 
   while (true) {
     clear();
@@ -137,10 +138,29 @@ int main() {
         refresh();
         getch();
         choice = -1; // Reset choice to go back to menu
-      } else if (choice == 3) { // Unimplemented functions
+      } else if (choice == 3) { // Power
         clear();
-        printw("Error: The '%s' function is currently unimplemented.\n",
-               choices[choice].c_str());
+        printw("Enter the base number: ");
+        refresh();
+
+        echo();
+        curs_set(1);
+
+        int scan_res_base = scanw("%lf", &number);
+
+        printw("Enter the exponent: ");
+        refresh();
+
+        int scan_res_exp = scanw("%lf", &exponent);
+
+        noecho();
+        curs_set(0);
+
+        if (scan_res_base != 1 || scan_res_exp != 1) {
+          printw("Invalid input.\n");
+        } else {
+          printw("Result:  %g\n", calculator::power(number, exponent));
+        }
         printw("Press any key to continue...");
         refresh();
         getch();

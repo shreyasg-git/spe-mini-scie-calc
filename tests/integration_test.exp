@@ -76,6 +76,36 @@ send "\r"
 # Now we should be back at the main menu
 expect "=== Interactive Calculator ==="
 
+# Press Down Arrow 3 times to reach "4. Power"
+send "\033\[B"
+send "\033\[B"
+send "\033\[B"
+
+# Send Enter to select "Power"
+send "\r"
+
+# Expect the prompt for the base number
+expect "Enter the base number: "
+
+# Send "2" as the base
+send "2\r"
+
+# Expect the prompt for the exponent
+expect "Enter the exponent: "
+
+# Send "3" as the exponent
+send "3\r"
+
+# Expect the result to be printed
+expect "Result:  8"
+
+# The app waits for "Press any key to continue..."
+expect "Press any key to continue..."
+send "\r"
+
+# Now we should be back at the main menu
+expect "=== Interactive Calculator ==="
+
 # Press Down Arrow 4 times to reach "Exit"
 send "\033\[B"
 send "\033\[B"
