@@ -29,6 +29,28 @@ send "\r"
 # Now we should be back at the main menu
 expect "=== Interactive Calculator ==="
 
+# Press Down Arrow 1 time to reach "2. Factorial"
+send "\033\[B"
+
+# Send Enter to select "Factorial"
+send "\r"
+
+# Expect the prompt for a number
+expect "Enter a number: "
+
+# Send "5" to calculate 5!
+send "5\r"
+
+# Expect the result to be printed
+expect "Result:  120"
+
+# The app waits for "Press any key to continue..."
+expect "Press any key to continue..."
+send "\r"
+
+# Now we should be back at the main menu
+expect "=== Interactive Calculator ==="
+
 # Press Down Arrow 4 times to reach "Exit"
 send "\033\[B"
 send "\033\[B"

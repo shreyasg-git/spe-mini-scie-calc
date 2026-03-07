@@ -16,3 +16,19 @@ TEST(CalculatorSquareRootTest, NegativeNumbers) {
     EXPECT_THROW(calculator::square_root(-1.0), std::invalid_argument);
     EXPECT_THROW(calculator::square_root(-4.0), std::invalid_argument);
 }
+
+// Test Factorial with positive integers and zero
+TEST(CalculatorFactorialTest, PositiveIntegersAndZero) {
+    EXPECT_DOUBLE_EQ(calculator::factorial(0.0), 1.0);
+    EXPECT_DOUBLE_EQ(calculator::factorial(1.0), 1.0);
+    EXPECT_DOUBLE_EQ(calculator::factorial(5.0), 120.0);
+    EXPECT_DOUBLE_EQ(calculator::factorial(10.0), 3628800.0);
+}
+
+// Test Factorial exceptions (negative numbers and non-integers)
+TEST(CalculatorFactorialTest, InvalidInputs) {
+    EXPECT_THROW(calculator::factorial(-1.0), std::invalid_argument);
+    EXPECT_THROW(calculator::factorial(-5.0), std::invalid_argument);
+    EXPECT_THROW(calculator::factorial(2.5), std::invalid_argument);
+    EXPECT_THROW(calculator::factorial(3.14159), std::invalid_argument);
+}

@@ -15,7 +15,7 @@ int main() {
   curs_set(0);           // Hide cursor initially
 
   std::vector<std::string> choices = {
-      "Square Root", "Factorial (unimplemented)",
+      "Square Root", "Factorial",
       "Natural Logarithm (unimplemented)", "Power (unimplemented)", "Exit"};
   int num_choices = choices.size();
   int highlight = 0;
@@ -85,7 +85,33 @@ int main() {
         refresh();
         getch();
         choice = -1; // Reset choice to go back to menu
-      } else if (choice >= 1 && choice <= 3) { // Unimplemented functions
+      } else if (choice == 1) { // Factorial
+        clear();
+        printw("Enter a number: ");
+        refresh();
+
+        echo();
+        curs_set(1);
+
+        int scan_res = scanw("%lf", &number);
+
+        noecho();
+        curs_set(0);
+
+        if (scan_res != 1) {
+          printw("Invalid input.\n");
+        } else {
+          try {
+            printw("Result:  %g\n", calculator::factorial(number));
+          } catch (const std::invalid_argument& e) {
+            printw("%s\n", e.what());
+          }
+        }
+        printw("Press any key to continue...");
+        refresh();
+        getch();
+        choice = -1; // Reset choice to go back to menu
+      } else if (choice >= 2 && choice <= 3) { // Unimplemented functions
         clear();
         printw("Error: The '%s' function is currently unimplemented.\n",
                choices[choice].c_str());
