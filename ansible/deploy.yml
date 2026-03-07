@@ -19,5 +19,5 @@
       command: docker rm sci-calc
       ignore_errors: yes
 
-    - name: Run the new calculator container with Gotty on port 8080
-      command: docker run -d --name sci-calc -p 8080:8080 shreyasg28/sci-calc:latest
+    - name: Run the new calculator container with Gotty on port 8081
+      command: docker run -d --name sci-calc -p 8081:8081 shreyasg28/sci-calc:latest
