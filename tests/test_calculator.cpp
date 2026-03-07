@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "calculator.h"
 #include <stdexcept>
+#include <cmath>
 
 // Test positive numbers
 TEST(CalculatorSquareRootTest, PositiveNumbers) {
@@ -31,4 +32,18 @@ TEST(CalculatorFactorialTest, InvalidInputs) {
     EXPECT_THROW(calculator::factorial(-5.0), std::invalid_argument);
     EXPECT_THROW(calculator::factorial(2.5), std::invalid_argument);
     EXPECT_THROW(calculator::factorial(3.14159), std::invalid_argument);
+}
+
+// Test Natural Logarithm with positive numbers
+TEST(CalculatorNaturalLogTest, PositiveNumbers) {
+    EXPECT_NEAR(calculator::natural_log(1.0), 0.0, 1e-9);
+    EXPECT_NEAR(calculator::natural_log(std::exp(1.0)), 1.0, 1e-9);
+    EXPECT_NEAR(calculator::natural_log(10.0), 2.302585092994046, 1e-9);
+}
+
+// Test Natural Logarithm exceptions (zero and negative numbers)
+TEST(CalculatorNaturalLogTest, ZeroAndNegativeNumbers) {
+    EXPECT_THROW(calculator::natural_log(0.0), std::invalid_argument);
+    EXPECT_THROW(calculator::natural_log(-1.0), std::invalid_argument);
+    EXPECT_THROW(calculator::natural_log(-100.0), std::invalid_argument);
 }
