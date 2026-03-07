@@ -47,3 +47,24 @@ TEST(CalculatorNaturalLogTest, ZeroAndNegativeNumbers) {
     EXPECT_THROW(calculator::natural_log(-1.0), std::invalid_argument);
     EXPECT_THROW(calculator::natural_log(-100.0), std::invalid_argument);
 }
+
+// Test Power function with positive base and exponent
+TEST(CalculatorPowerTest, PositiveBaseAndExponent) {
+    EXPECT_DOUBLE_EQ(calculator::power(2.0, 3.0), 8.0);
+    EXPECT_DOUBLE_EQ(calculator::power(5.0, 2.0), 25.0);
+    EXPECT_DOUBLE_EQ(calculator::power(10.0, 4.0), 10000.0);
+}
+
+// Test Power function with fractional exponents and negative bases
+TEST(CalculatorPowerTest, MixedInputs) {
+    EXPECT_DOUBLE_EQ(calculator::power(4.0, 0.5), 2.0); // Square root basically
+    EXPECT_DOUBLE_EQ(calculator::power(-2.0, 3.0), -8.0);
+    EXPECT_DOUBLE_EQ(calculator::power(2.0, -2.0), 0.25);
+}
+
+// Test Power function with zero exponent (should always be 1)
+TEST(CalculatorPowerTest, ZeroExponent) {
+    EXPECT_DOUBLE_EQ(calculator::power(5.0, 0.0), 1.0);
+    EXPECT_DOUBLE_EQ(calculator::power(-5.0, 0.0), 1.0);
+    EXPECT_DOUBLE_EQ(calculator::power(0.0, 0.0), 1.0); // Often 1 in std::pow
+}
