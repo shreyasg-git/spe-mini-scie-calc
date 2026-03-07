@@ -1,32 +1,40 @@
-// pipeline {
-//     agent any
+pipeline {
+    agent any
 
-//     stages {
+    stages {
 
-//         stage('Checkout') {
-//             steps {
-//                 git 'https://github.com/shreyasg-git/spe-mini-scie-calc'
-//             }
-//         }
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/shreyasg-git/spe-mini-scie-calc.git'
+            }
+        }
 
-//         stage('Build') {
-//             steps {
-//                 sh '''
-//                 mkdir -p build
-//                 cd build
-//                 cmake ..
-//                 make
-//                 '''
-//             }
-//         }
+        stage('Build (CMake)') {
+            steps {
+                sh '''
+                mkdir -p build
+                cd build
+                cmake ..
+                make
+                '''
+            }
+        }
 
-//         stage('Run Binary') {
-//             steps {
-//                 sh '''
-//                 ./build/calculator
-//                 '''
-//             }
-//         }
+        stage('Build Docker Image') {
+            steps {
+                sh '''
+                DOCKER_BUILDKIT=1 docker build -t shreyasg28/sci-calc .
+                '''
+            }
+        }
 
-//     }
-// }
+        stage('Push Docker Image') {
+            steps {
+                sh '''
+                docker push shreyasg28/sci-calc:latest
+                '''
+            }
+        }
+
+    }
+}
