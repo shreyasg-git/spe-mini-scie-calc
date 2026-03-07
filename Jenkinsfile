@@ -30,7 +30,8 @@ pipeline {
             steps {
                 sh '''
                 cd build
-                # Run ONLY the IntegrationTest
+                # Run ONLY the IntegrationTest and set a generic terminal for ncurses
+                export TERM=xterm-256color
                 ctest --output-on-failure -R "^IntegrationTest$"
                 '''
             }
