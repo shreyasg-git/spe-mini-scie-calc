@@ -26,7 +26,7 @@ int main() {
 
   while (true) {
     clear();
-    printw("\n=== Interactive Calculator V1.0 ===\n");
+    printw("\n=== Interactive Calculator V1.1 ===\n");
     for (int i = 0; i < num_choices; i++) {
       if (i == highlight) {
         attron(A_REVERSE);
