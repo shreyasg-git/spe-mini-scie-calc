@@ -1,8 +1,8 @@
 #include "calculator.h"
 #include <cmath>
 #include <locale.h>
-#include <stdexcept>
 #include <ncurses.h>
+#include <stdexcept>
 #include <string>
 #include <vector>
 
@@ -14,9 +14,8 @@ int main() {
   keypad(stdscr, TRUE);  // Enable arrow keys
   curs_set(0);           // Hide cursor initially
 
-  std::vector<std::string> choices = {
-      "Square Root", "Factorial",
-      "Natural Logarithm", "Power", "Exit"};
+  std::vector<std::string> choices = {"Square Root", "Factorial",
+                                      "Natural Logarithm", "Power", "Exit"};
   int num_choices = choices.size();
   int highlight = 0;
   int choice = -1;
@@ -27,7 +26,7 @@ int main() {
 
   while (true) {
     clear();
-    printw("\n=== Interactive Calculator ===\n");
+    printw("\n=== Interactive Calculator V1.0 ===\n");
     for (int i = 0; i < num_choices; i++) {
       if (i == highlight) {
         attron(A_REVERSE);
@@ -78,14 +77,14 @@ int main() {
         } else {
           try {
             printw("Result:  %g\n", calculator::square_root(number));
-          } catch (const std::invalid_argument& e) {
+          } catch (const std::invalid_argument &e) {
             printw("%s\n", e.what());
           }
         }
         printw("Press any key to continue...");
         refresh();
         getch();
-        choice = -1; // Reset choice to go back to menu
+        choice = -1;            // Reset choice to go back to menu
       } else if (choice == 1) { // Factorial
         clear();
         printw("Enter a number: ");
@@ -104,14 +103,14 @@ int main() {
         } else {
           try {
             printw("Result:  %g\n", calculator::factorial(number));
-          } catch (const std::invalid_argument& e) {
+          } catch (const std::invalid_argument &e) {
             printw("%s\n", e.what());
           }
         }
         printw("Press any key to continue...");
         refresh();
         getch();
-        choice = -1; // Reset choice to go back to menu
+        choice = -1;            // Reset choice to go back to menu
       } else if (choice == 2) { // Natural Logarithm
         clear();
         printw("Enter a number: ");
@@ -130,14 +129,14 @@ int main() {
         } else {
           try {
             printw("Result:  %g\n", calculator::natural_log(number));
-          } catch (const std::invalid_argument& e) {
+          } catch (const std::invalid_argument &e) {
             printw("%s\n", e.what());
           }
         }
         printw("Press any key to continue...");
         refresh();
         getch();
-        choice = -1; // Reset choice to go back to menu
+        choice = -1;            // Reset choice to go back to menu
       } else if (choice == 3) { // Power
         clear();
         printw("Enter the base number: ");
