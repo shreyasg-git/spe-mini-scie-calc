@@ -23,3 +23,6 @@ RUN curl -sLk https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_linu
 EXPOSE 8081
 
 CMD ["gotty", "-w", "-p", "8081", "./calculator"]
+
+# ENTRYPOINT ["gotty"]
+# CMD ["-w", "-p", "8081", "./calculator"]   
